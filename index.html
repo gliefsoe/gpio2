@@ -25,7 +25,14 @@
 <script id="gpio-li-tpl" type="text/x-handlebars-template">
     {{#.}}
     <!--<li><input type="button" value="{{this.name}}" onclick="javascript:alert('{{this.action}}')" /></li>-->
-    <li><a href="#gpio/{{this.id}}">{{this.name}}</a></li>
+    <table width="100%">
+        <tr>
+            <td width="250">{{this.group}}</td>
+            <td><a href="#gpio/{{this.id}}">{{this.name}}</a></td>
+            <td><a href="javascript:loadDoc('{{this.onUrl}}')">{{this.onAction}}</a></td>
+            <td><a href="javascript:loadDoc('{{this.offUrl}}')">{{this.offAction}}</a></td>
+        </tr>
+    </table>
     {{/.}}
 </script>
 
@@ -50,7 +57,8 @@ function loadDoc(s) {
         <h2>{{this.group}}</h2>
         <span class="location"></span>
         <ul>
-            <li><a href="javascript:loadDoc('{{this.action}}')">call</a></li>
+            <li><a href="javascript:loadDoc('{{this.onUrl}}')">{{this.onAction}}</a></li>
+            <li><a href="javascript:loadDoc('{{this.offUrl}}')">{{this.offAction}}</a></li>
         </ul>
     </div>
 </script>
