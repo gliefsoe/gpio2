@@ -57,10 +57,26 @@ var MemoryStore = function(successCallback, errorCallback) {
     // Data
     //
     this.gpio_list = [
-        {"id": 1, "name": "GPIO 1 OFF", "group":"ZWEMBAD", "action": "http://127.0.0.1/gpio.php?pin=1&status=0"},
-        {"id": 2, "name": "GPIO 1 ON ", "group":"ZWEMBAD", "action": "http://127.0.0.1/gpio.php?pin=1&status=1"},
-        {"id": 3, "name": "GPIO 2 OFF", "group":"ZWEMBAD", "action": "http://127.0.0.1/gpio.php?pin=2&status=0"},
-        {"id": 4, "name": "GPIO 2 ON ", "group":"ZWEMBAD", "action": "http://127.0.0.1/gpio.php?pin=2&status=1"},
+        {
+            "id": 1, "name": "GPIO 1 ON/OFF", "group":"ZWEMBAD", 
+            "onAction" : "GPIO 1 ON", "onUrl": "http://127.0.0.1/gpio.php?pin=1&status=1",
+            "offAction": "GPIO 1 OFF", "offUrl": "http://127.0.0.1/gpio.php?pin=1&status=0"
+        },
+        {
+            "id": 2, "name": "GPIO 2 ON/OFF ", "group":"ZWEMBAD", 
+            "onAction" : "GPIO 2 ON", "onUrl": "http://127.0.0.1/gpio.php?pin=2&status=1",
+            "offAction": "GPIO 2 OFF", "offUrl": "http://127.0.0.1/gpio.php?pin=2&status=0"
+        },
+        {
+            "id": 3, "name": "GPIO 3 ON/OFF", "group":"TUIN", 
+            "onAction" : "GPIO 3 ON", "onUrl": "http://127.0.0.1/gpio.php?pin=3&status=1",
+            "offAction": "GPIO 3 OFF", "offUrl": "http://127.0.0.1/gpio.php?pin=3&status=0"
+        },
+        {
+            "id": 4, "name": "GPIO 4 ON/OFF ", "group":"TUIN", 
+            "onAction" : "GPIO 4 ON", "onUrl": "http://127.0.0.1/gpio.php?pin=4&status=1",
+            "offAction": "GPIO 4 OFF", "offUrl": "http://127.0.0.1/gpio.php?pin=4&status=0"
+        },
         {}
     ];
 
